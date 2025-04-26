@@ -24,6 +24,7 @@ const Navigation = () => {
               <SignInButton mode="modal" />
             </SignedOut>
             <SignedIn>
+              <Link href={'/dashboard'}>Dashboard</Link>
               <Link href={'/user-profile'}>Profile</Link>
               <SignOutButton />
             </SignedIn>
