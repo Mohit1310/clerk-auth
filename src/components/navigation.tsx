@@ -1,7 +1,8 @@
 import {
+  SignedIn,
+  SignedOut,
   SignInButton,
   SignOutButton,
-  //   UserButton,
 } from '@clerk/nextjs';
 import Link from 'next/link';
 import React from 'react';
@@ -17,10 +18,13 @@ const Navigation = () => {
             </h1>
           </div>
           <div className="flex items-center gap-4">
-            <SignInButton mode="modal" />
-            {/* <UserButton /> */}
-            <Link href={'/user-profile'}>Profile</Link>
-            <SignOutButton />
+            <SignedOut>
+              <SignInButton mode="modal" />
+            </SignedOut>
+            <SignedIn>
+              <Link href={'/user-profile'}>Profile</Link>
+              <SignOutButton />
+            </SignedIn>
           </div>
         </div>
       </div>
